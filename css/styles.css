@@ -9,5 +9,14 @@
 }
 
 td div{
-  display: block;
+  height: 50px;
+}
+
+label h3 {
+  display: inline-block;
+}
+
+#checkout{
+  display: inline-block;
+  float: right;
 }

@@ -1,5 +1,6 @@
 app.factory('cartService', function () {
-  var cart = [];
+  var cart = {quantity : 0, records:[]};
+  var quantities = [1,2,3,4,5,6,7,8,9,10];
   var records = [
     {
         _id: "55c8ee82152165d244b98307",
@@ -189,6 +190,9 @@ app.factory('cartService', function () {
     records: function () {
       return records;
     },
+    quantities: function () {
+      return quantities;
+    },
     styles: function () {
       var styles = [];
       records.forEach(function (record) {
@@ -198,7 +202,7 @@ app.factory('cartService', function () {
           }
         });
       });
-      return styles;
+      return styles.sort();
     },
     prices: function () {
       return records.map(function (record) {
@@ -208,25 +212,23 @@ app.factory('cartService', function () {
     cart: function () {
       return cart;
     },
-    addRecord: function (record) {
-      cart.push(record);
+    // quantityInCart: function () {
+    //   var quant = 0;
+    //   if (cart.length) {
+    //     cart.forEach(function (record) {
+    //       quant += record.quantityInCart;
+    //     });
+    //   }
+    //   console.log(cart);
+    //   return quant;
+    // },
+    addRecord: function (record, quantity) {
+      cart.quantity= record.quantity ? parseInt(record.quantity) + parseInt(quantity) : parseInt(quantity);
+      record.quantityInCart = record.quantityInCart ? parseInt(record.quantityInCart) + parseInt(quantity) : parseInt(quantity);
+      if (cart.records.indexOf(record) === -1) {
+        cart.records.push(record);
+      }
     }
-
   };
   return obj;
 });
-
-// app.factory('commentService', function () {
-//   var comments = []
-//
-//   var obj = {
-//     comments: function () {
-//       return comments
-//     },
-//     addComment: function (comment) {
-//       comments.push(comment)
-//     }
-//   }
-//
-//   return obj
-// })

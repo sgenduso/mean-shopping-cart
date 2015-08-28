@@ -3,11 +3,11 @@
   <div>
     <label for='search-by-style'> Search by Style:
     <select ng-model='searchByStyle'>
-      <option ng-repeat='style in styles' value='{{style}}'> {{style}}
+      <option ng-repeat='style in styles' value='{{style}}'> {{style}}</option>
     </select>
     <label for='search-by-band-member'> Search Records:
     <input type='text' id='search-by-record' ng-model='searchByRecord' name='search_by_record'/>
-    <input type='submit' class='btn btn-danger' value='Checkout'>
+    <input type='submit' id='checkout' class='btn btn-danger' value='Checkout | Bag: {{cart.quantity > 0 ? cart.quantity : "Empty"}}'>
   </div>
   <table class='table'>
     <thead>
@@ -18,16 +18,15 @@
           <div class='table-right'>
             <label for='sort-price'>Sort by Price:</label>
             <select ng-model='sortByPrice'>
-              <option value='high-to-low'> Highest to Lowest
-              <option value='low-to-high'> Lowest to Highest
+              <option value='-price'> High to Low</option>
+              <option value='price'> Low to High</option>
             </select>
           </div>
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat='record in records | filter : searchByRecord | filter: searchByStyle'>
-         <!-- | orderBy: "sortByPrice" === "high-to-low" ? "-price" : "sortByPrice" === "low-to-high" ? "price"  -->
+      <tr ng-repeat='record in records | filter : searchByRecord | filter: searchByStyle | orderBy: sortByPrice'>
         <td>
           <img src={{record.imageUrl}} alt={{record.album}}>
         </td>
@@ -37,10 +36,13 @@
               <h3>{{record.album}}</h3>
             </div>
             <div class='table-right'>
-              <label for='quantity'> Quantity:
-              <select>
+              <label for='quantity'> <h3>Quantity:</h3>
+              <select ng-model='quantity'>
+                <option ng-repeat='quantity in quantities' value='{{quantity}}'> {{quantity}}</option>
               </select>
-              <input type='submit' class='btn btn-warning' value='Add to Cart'/>
+              <form ng-submit='addRecord()'>
+                <input type='submit' class='btn btn-warning' value='Add to Cart' ng-model='record' />
+              </form>
             </div>
           </div>
           <p><Strong>Artist:</Strong> {{record.artist}}</p>
