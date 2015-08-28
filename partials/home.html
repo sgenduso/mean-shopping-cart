@@ -1,2 +1,59 @@
 HIII
 <p>{{test}}</p>
+<div>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Record</th>
+        <th>
+          <span>Information</span>
+          <span>
+            <label for='sort-price'>Sort by Price:</label>
+            <select>
+
+            </select>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='record in records track by $index'>
+        <td>
+          <img src={{record.imageUrl}} alt={{record.album}}>
+        </td>
+        <td>
+          <h3>{{record.album}}</h3>
+          <p>Artist: {{record.artist}}</p>
+          <p>Price: {{record.price | currency}}</p>
+          <p>Released: {{record.releaseYear}}</p>
+          <p>In Stock? {{record.inStock}}</p>
+          <p>Rating: {{record.rating}}</p>
+          <p>Band Members: {{record.bandMembers}}</p>
+          <p>Trending Scale: {{record.trendingScale}}</p>
+          <p> Styles:
+          <ul ng-repeat='style in record.styles'>
+            <li>{{style}}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+_id: "55c8ee82152165d244b98310",
+artist: "Earth, Wind & Fire",
+album: "I am",
+releaseYear: 1979,
+price: 21,
+inStock: true,
+rating: 3,
+imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/755/MI0000755797.jpg?partner=allrovi.com',
+bandMembers: 'Philip Bailey, Maurice White, Verdine White, Ralph Johnson, Fred White...',
+trendingScale: 63,
+genres: [
+  'Funk',
+  'Soul',
+  'Disco'
+]
+},

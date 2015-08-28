@@ -12,7 +12,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0001/511/MI0001511716.jpg?partner=allrovi.com',
         bandMembers: 'Lindsey Buckingham, Mick Fleetwood, Christine McVie, John McVie, Stevie Nicks',
         trendingScale: 244,
-        genres: [
+        styles: [
           'Pop',
           'Soft Rock'
         ]
@@ -28,7 +28,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/020/MI0000020836.jpg?partner=allrovi.com',
         bandMembers: 'Billy Joel, Larry Carlton, Eric Weissberg, Billy Armstrong, Richard Bennett...',
         trendingScale: 150,
-        genres: [
+        styles: [
           'Contemporary Pop',
           'Soft Rock',
           'Singer/Songwriter'
@@ -45,7 +45,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/699/MI0000699371.jpg?partner=allrovi.com',
         bandMembers: 'Agnetha Fältskog, Anni-Frid Lyngstad, Benny Andersson, Björn Ulvaeus',
         trendingScale: 75,
-        genres: [
+        styles: [
           'Euro Pop',
           'Swedish Pop',
           'Contemporary Pop/Rock'
@@ -62,7 +62,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0001/781/MI0001781614.jpg?partner=allrovi.com',
         bandMembers: 'James Hetfield, Kirk Hammett, Cliff Burton, Lars Ulrich',
         trendingScale: 100,
-        genres: [
+        styles: [
           'Heavy Metal',
           'Thrash Metal',
           'Hard Rock'
@@ -79,7 +79,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/034/MI0000034646.jpg?partner=allrovi.com',
         bandMembers: 'David Cassidy, Shirley Jones, Dennis Budimir, Louie Shelton, Tommy Tedesco...',
         trendingScale: 20,
-        genres: [
+        styles: [
           'Sunshine Pop',
           'Teen Idols'
         ]
@@ -95,7 +95,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0002/443/MI0002443570.jpg?partner=allrovi.com',
         bandMembers: 'Dennis DeYoung, Chuck Panozzo, John Panozzo, Tommy Shaw, James Young',
         trendingScale: 65,
-        genres: [
+        styles: [
           'Arena Rock',
           'Contemporary Rock'
         ]
@@ -111,7 +111,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0003/201/MI0003201028.jpg?partner=allrovi.com',
         bandMembers: 'Freddie Mercury, Brian May, Roger Taylor, John Deacon',
         trendingScale: 250,
-        genres: [
+        styles: [
           'Arena Rock',
           'Contemporary Pop/Rock',
           'Glam Rock',
@@ -128,7 +128,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0002/503/MI0002503888.jpg?partner=allrovi.com',
         bandMembers: 'Steve Walsh, Robby Steinhardt, Kerry Livgren, Phil Ehart, Dave Hope, Rich Williams',
         trendingScale: 78,
-        genres: [
+        styles: [
           'Album Rock',
           'Progressive Rock'
         ]
@@ -144,7 +144,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/677/MI0000677652.jpg?partner=allrovi.com',
         bandMembers: 'Michael Jackson, Ollie E. Brown, David Williams, Stefan Stefanovic...',
         trendingScale: 102,
-        genres: [
+        styles: [
           'Pop',
           'Dance Pop',
           'Contemporary R&B'
@@ -161,7 +161,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0003/606/MI0003606498.jpg?partner=allrovi.com',
         bandMembers: 'Michael Jackson, Ollie E. Brown, David Williams, Stefan Stefanovic...',
         trendingScale: 50,
-        genres: [
+        styles: [
           'British Pop',
           'Contemporary Pop/Rock'
         ]
@@ -177,7 +177,7 @@ app.factory('cartService', function () {
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/755/MI0000755797.jpg?partner=allrovi.com',
         bandMembers: 'Philip Bailey, Maurice White, Verdine White, Ralph Johnson, Fred White...',
         trendingScale: 63,
-        genres: [
+        styles: [
           'Funk',
           'Soul',
           'Disco'
