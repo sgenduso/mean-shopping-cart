@@ -5,8 +5,8 @@
     <select ng-model='searchByStyle'>
       <option ng-repeat='style in styles' value='{{style}}'> {{style}}
     </select>
-    <label for='search-by-band-member'> Search by Band Member:
-    <input type='text' id='search-by-band-member' ng-model='searchByBandMember' name='search_by_band_member'/>
+    <label for='search-by-band-member'> Search Records:
+    <input type='text' id='search-by-record' ng-model='searchByRecord' name='search_by_record'/>
     <input type='submit' class='btn btn-danger' value='Checkout'>
   </div>
   <table class='table'>
@@ -17,15 +17,17 @@
           <div class='table-left'>Information</div>
           <div class='table-right'>
             <label for='sort-price'>Sort by Price:</label>
-            <select>
-
+            <select ng-model='sortByPrice'>
+              <option value='high-to-low'> Highest to Lowest
+              <option value='low-to-high'> Lowest to Highest
             </select>
           </div>
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat='record in records | filter : searchByBandMember'>
+      <tr ng-repeat='record in records | filter : searchByRecord | filter: searchByStyle'>
+         <!-- | orderBy: "sortByPrice" === "high-to-low" ? "-price" : "sortByPrice" === "low-to-high" ? "price"  -->
         <td>
           <img src={{record.imageUrl}} alt={{record.album}}>
         </td>

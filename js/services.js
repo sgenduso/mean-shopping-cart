@@ -2,6 +2,22 @@ app.factory('cartService', function () {
   var cart = [];
   var records = [
     {
+        _id: "55c8ee82152165d244b98307",
+        artist: "Kansas",
+        album: "Leftoverture",
+        releaseYear: 1976,
+        price: 34,
+        inStock: false,
+        rating: 4,
+        imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0002/503/MI0002503888.jpg?partner=allrovi.com',
+        bandMembers: 'Steve Walsh, Robby Steinhardt, Kerry Livgren, Phil Ehart, Dave Hope, Rich Williams',
+        trendingScale: 78,
+        styles: [
+          'Album Rock',
+          'Progressive Rock'
+        ]
+    },
+    {
         _id: "55c8ee82152165d244b98300",
         artist: "Fleetwood Mac",
         album: "Rumours",
@@ -117,22 +133,7 @@ app.factory('cartService', function () {
           'Glam Rock',
         ]
     },
-    {
-        _id: "55c8ee82152165d244b98307",
-        artist: "Kansas",
-        album: "Leftoverture",
-        releaseYear: 1976,
-        price: 34,
-        inStock: false,
-        rating: 4,
-        imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0002/503/MI0002503888.jpg?partner=allrovi.com',
-        bandMembers: 'Steve Walsh, Robby Steinhardt, Kerry Livgren, Phil Ehart, Dave Hope, Rich Williams',
-        trendingScale: 78,
-        styles: [
-          'Album Rock',
-          'Progressive Rock'
-        ]
-    },
+
     {
         _id: "55c8ee82152165d244b98308",
         artist: "Michael Jackson",
@@ -159,7 +160,7 @@ app.factory('cartService', function () {
         inStock: true,
         rating: 3,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0003/606/MI0003606498.jpg?partner=allrovi.com',
-        bandMembers: 'Michael Jackson, Ollie E. Brown, David Williams, Stefan Stefanovic...',
+        bandMembers: 'Paul McCartney, John Lennon, George Harrison, Ringo Starr',
         trendingScale: 50,
         styles: [
           'British Pop',
@@ -198,6 +199,11 @@ app.factory('cartService', function () {
         });
       });
       return styles;
+    },
+    prices: function () {
+      return records.map(function (record) {
+        return record.price;
+      });
     },
     cart: function () {
       return cart;
