@@ -188,6 +188,17 @@ app.factory('cartService', function () {
     records: function () {
       return records;
     },
+    styles: function () {
+      var styles = [];
+      records.forEach(function (record) {
+        record.styles.forEach(function (style) {
+          if (styles.indexOf(style) === -1) {
+            styles.push(style);
+          }
+        });
+      });
+      return styles;
+    },
     cart: function () {
       return cart;
     },

@@ -1,0 +1,9 @@
+.table-left{
+  display: inline-block;
+  float: left;
+}
+
+.table-right{
+  display: inline-block;
+  float: right;
+}
