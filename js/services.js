@@ -223,8 +223,10 @@ app.factory('cartService', function () {
     //   return quant;
     // },
     addRecord: function (record, quantity) {
-      cart.quantity= record.quantity ? parseInt(record.quantity) + parseInt(quantity) : parseInt(quantity);
-      record.quantityInCart = record.quantityInCart ? parseInt(record.quantityInCart) + parseInt(quantity) : parseInt(quantity);
+      cart.quantity= parseInt(cart.quantity) + parseInt(quantity) || parseInt(quantity);
+      record.quantityInCart= parseInt(record.quantityInCart) + parseInt(quantity) || parseInt(quantity);
+      // cart.quantity = cart.quantity ? parseInt(cart.quantity) + parseInt(quantity) : parseInt(quantity);
+      // record.quantityInCart = record.quantityInCart ? parseInt(record.quantityInCart) + parseInt(quantity) : parseInt(quantity);
       if (cart.records.indexOf(record) === -1) {
         cart.records.push(record);
       }

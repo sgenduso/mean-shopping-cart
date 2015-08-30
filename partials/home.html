@@ -37,7 +37,7 @@
             </div>
             <div class='table-right'>
               <label for='quantity'> <h3>Quantity:</h3>
-              <select ng-model='quantity'>
+              <select ng-model='quantity' ng-init='quantity = "1"'>
                 <option ng-repeat='quantity in quantities' value='{{quantity}}'> {{quantity}}</option>
               </select>
               <form ng-submit='addRecord()'>
