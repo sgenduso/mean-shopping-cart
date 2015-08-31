@@ -24,4 +24,7 @@ app.controller('CartController',
 '$location',
 function ($scope, cartService, $location) {
 $scope.cart = cartService.cart();
+$scope.removeRecord = function () {
+  cartService.removeRecord(this.record);
+};
 }]);

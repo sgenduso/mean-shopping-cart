@@ -219,6 +219,11 @@ app.factory('cartService', function () {
       if (cart.records.indexOf(record) === -1) {
         cart.records.push(record);
       }
+    },
+    removeRecord: function (record) {
+      cart.quantity -= parseInt(record.quantityInCart);
+      cart.orderTotal -= parseInt(record.price) * parseInt(record.quantityInCart);
+      cart.records.splice(cart.records.indexOf(record), 1);
     }
   };
   return obj;
