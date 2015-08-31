@@ -17,6 +17,17 @@ label h3 {
 }
 
 #checkout{
+  /*display: inline-block;*/
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  /*float: right;*/
+}
+
+form {
   display: inline-block;
-  float: right;
+}
+
+.checkout-pic{
+  width: 200px;
 }
