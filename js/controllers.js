@@ -23,5 +23,5 @@ app.controller('CartController',
 'cartService',
 '$location',
 function ($scope, cartService, $location) {
-$scope.recordsInCart = cartService.cart().records;
+$scope.cart = cartService.cart();
 }]);

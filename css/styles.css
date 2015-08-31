@@ -17,11 +17,9 @@ label h3 {
 }
 
 #checkout{
-  /*display: inline-block;*/
   position: absolute;
   right: 0px;
   top: 0px;
-  /*float: right;*/
 }
 
 form {
@@ -30,4 +28,12 @@ form {
 
 .checkout-pic{
   width: 200px;
+}
+
+table.checkout tr td:first-of-type {
+  width: 60%;
+}
+
+table.checkout tr td:last-of-type {
+  width: 12%;
 }

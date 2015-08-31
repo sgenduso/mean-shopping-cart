@@ -1,5 +1,5 @@
 app.factory('cartService', function () {
-  var cart = {quantity : 0, records:[]};
+  var cart = {quantity : 0, orderTotal: 0, records:[]};
   var quantities = [1,2,3,4,5,6,7,8,9,10];
   var records = [
     {
@@ -212,21 +212,10 @@ app.factory('cartService', function () {
     cart: function () {
       return cart;
     },
-    // quantityInCart: function () {
-    //   var quant = 0;
-    //   if (cart.length) {
-    //     cart.forEach(function (record) {
-    //       quant += record.quantityInCart;
-    //     });
-    //   }
-    //   console.log(cart);
-    //   return quant;
-    // },
     addRecord: function (record, quantity) {
-      cart.quantity= parseInt(cart.quantity) + parseInt(quantity) || parseInt(quantity);
-      record.quantityInCart= parseInt(record.quantityInCart) + parseInt(quantity) || parseInt(quantity);
-      // cart.quantity = cart.quantity ? parseInt(cart.quantity) + parseInt(quantity) : parseInt(quantity);
-      // record.quantityInCart = record.quantityInCart ? parseInt(record.quantityInCart) + parseInt(quantity) : parseInt(quantity);
+      cart.quantity += parseInt(quantity);
+      record.quantityInCart = parseInt(record.quantityInCart) + parseInt(quantity) || parseInt(quantity);
+      cart.orderTotal += parseInt(record.price) * parseInt(quantity);
       if (cart.records.indexOf(record) === -1) {
         cart.records.push(record);
       }
