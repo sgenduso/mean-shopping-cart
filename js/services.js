@@ -223,7 +223,20 @@ app.factory('cartService', function () {
     removeRecord: function (record) {
       cart.quantity -= parseInt(record.quantityInCart);
       cart.orderTotal -= parseInt(record.price) * parseInt(record.quantityInCart);
+      record.quantityInCart = 0;
       cart.records.splice(cart.records.indexOf(record), 1);
+    },
+    toggle: function (thing) {
+      return !thing;
+    },
+    editQuantity: function (record, newQuantity) {
+      if (newQuantity === undefined) {
+        newQuantity = record.quantityInCart;
+      }
+      quantDiff = parseInt(newQuantity) - parseInt(record.quantityInCart);
+      record.quantityInCart = parseInt(newQuantity);
+      cart.quantity += quantDiff;
+      cart.orderTotal += parseInt(record.price) * quantDiff;
     }
   };
   return obj;

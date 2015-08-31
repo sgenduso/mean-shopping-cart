@@ -22,22 +22,26 @@
         <p><Strong>Trending Scale:</Strong> {{record.trendingScale}}</p>
       </td>
       <td>
-        {{record.quantityInCart}}
+        <span ng-show='!show'>{{record.quantityInCart}}</span>
+        <span ng-show='show'>
+          <input type='number' min=1 max=10 id='edit-quantity' ng-model='newQuantity' ng-init='newQuantity={{record.quantityInCart}}'/>
+        </span>
       </td>
       <td>
         {{record.quantityInCart * record.price | currency}}
       </td>
       <td>
-        <form ng-submit='editRecord()'>
-          <input type='submit' class='btn btn-warning' value='Edit' ng-model='record' />
-        </form>
-        <form ng-submit='removeRecord()'>
+        <!-- <form ng-submit='toggleEdit()'> -->
+          <input type='submit' class='btn btn-warning' value='Edit' ng-model='record' ng-show='!show' ng-click='toggleEdit()'/>
+          <input type='submit' class='btn btn-warning' value='Save' ng-model='record' ng-show='show' ng-click='toggleEdit(); saveQuantity(newQuantity)'/>
+        <!-- </form> -->
+        <!-- <form ng-submit='removeRecord()'> -->
           <input type='submit' class='btn btn-danger' value='Remove' ng-model='record' />
-        </form>
+        <!-- </form> -->
       </td>
     </tr>
   </tbody>
 </table>
-<form ng-submit='placeOrder()'>
+<form ng-submit='placeOrder()' class='place-order'>
   <input type='submit' class='btn btn-success' value='Place Order' />
 </form>

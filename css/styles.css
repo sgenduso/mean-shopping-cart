@@ -31,9 +31,13 @@ form {
 }
 
 table.checkout tr td:first-of-type {
-  width: 60%;
+  width: 50%;
 }
 
 table.checkout tr td:last-of-type {
-  width: 12%;
+  width: 15%;
+}
+
+.place-order{
+  float: right;
 }
