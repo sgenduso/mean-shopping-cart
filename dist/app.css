@@ -1,0 +1,43 @@
+.table-left{
+  display: inline-block;
+  float: left;
+}
+
+.table-right{
+  display: inline-block;
+  float: right;
+}
+
+td div{
+  height: 50px;
+}
+
+label h3 {
+  display: inline-block;
+}
+
+#checkout{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+form {
+  display: inline-block;
+}
+
+.checkout-pic{
+  width: 200px;
+}
+
+table.checkout tr td:first-of-type {
+  width: 50%;
+}
+
+table.checkout tr td:last-of-type {
+  width: 15%;
+}
+
+.place-order{
+  float: right;
+}

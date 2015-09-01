@@ -1,0 +1,63 @@
+
+<div>
+  <div>
+    <label for='search-by-style'> Search by Style:
+    <select ng-model='searchByStyle'>
+      <option ng-repeat='style in styles' value='{{style}}'> {{style}}</option>
+    </select>
+    <label for='search-by-band-member'> Search Records:
+    <input type='text' id='search-by-record' ng-model='searchByRecord' name='search_by_record'/>
+    <input type='submit' id='checkout' ng-click='newPage("/checkout")' class='btn btn-danger' value='Checkout | Bag: {{cart.quantity > 0 ? cart.quantity : "Empty"}}'>
+  </div>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Record</th>
+        <th>
+          <div class='table-left'>Information</div>
+          <div class='table-right'>
+            <label for='sort-price'>Sort by Price:</label>
+            <select ng-model='sortByPrice'>
+              <option value='-price'> High to Low</option>
+              <option value='price'> Low to High</option>
+            </select>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='record in records | filter : searchByRecord | filter: searchByStyle | orderBy: sortByPrice'>
+        <td>
+          <img src={{record.imageUrl}} alt={{record.album}}>
+        </td>
+        <td>
+          <div>
+            <div class='table-left'>
+              <h3>{{record.album}}</h3>
+            </div>
+            <div class='table-right'>
+              <label for='quantity'> <h3>Quantity:</h3>
+              <select ng-model='quantity' ng-init='quantity = "1"'>
+                <option ng-repeat='quantity in quantities' value='{{quantity}}'> {{quantity}}</option>
+              </select>
+              <form ng-submit='addRecord()'>
+                <input type='submit' class='btn btn-warning' value='Add to Cart' ng-model='record' />
+              </form>
+            </div>
+          </div>
+          <p><Strong>Artist:</Strong> {{record.artist}}</p>
+          <p><Strong>Price:</Strong> {{record.price | currency}}</p>
+          <p><Strong>Released:</Strong> {{record.releaseYear}}</p>
+          <p><Strong>In Stock?</Strong> {{record.inStock ? 'Yes' : 'No'}}</p>
+          <p><Strong>Rating:</Strong> {{record.rating}}</p>
+          <p><Strong>Band Members:</Strong> {{record.bandMembers}}</p>
+          <p><Strong>Trending Scale:</Strong> {{record.trendingScale}}</p>
+          <p><Strong>Styles:</Strong>
+          <ul ng-repeat='style in record.styles'>
+            <li>{{style}}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
