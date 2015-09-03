@@ -45,17 +45,29 @@
               </form>
             </div>
           </div>
-          <p><Strong>Artist:</Strong> {{record.artist}}</p>
-          <p><Strong>Price:</Strong> {{record.price | currency}}</p>
-          <p><Strong>Released:</Strong> {{record.releaseYear}}</p>
-          <p><Strong>In Stock?</Strong> {{record.inStock ? 'Yes' : 'No'}}</p>
-          <p><Strong>Rating:</Strong> {{record.rating}}</p>
-          <p><Strong>Band Members:</Strong> {{record.bandMembers}}</p>
+          <section class='record-info'>
+            <p><Strong>Artist:</Strong> {{record.artist}}</p>
+            <p><Strong>Price:</Strong> {{record.price | currency}}</p>
+            <p><Strong>Released:</Strong> {{record.releaseYear}}</p>
+            <p><Strong>In Stock?</Strong> {{record.inStock ? 'Yes' : 'No'}}</p>
+            <p><Strong>Rating:</Strong> {{record.rating}}</p>
+            <p><Strong>Band Members:</Strong> {{record.bandMembers}}</p>
+            <p><Strong>Styles:</Strong>
+            <ul ng-repeat='style in record.styles'>
+              <li>{{style}}</li>
+            </ul>
+          </section>
+
+          <section class='gauge'>
           <p><Strong>Trending Scale:</Strong> {{record.trendingScale}}</p>
-          <p><Strong>Styles:</Strong>
-          <ul ng-repeat='style in record.styles'>
-            <li>{{style}}</li>
-          </ul>
+           <div class="box gauge--3" gs-move-gauge trending-scale="record.trendingScale">
+             <div class="mask">
+               <div class="semi-circle"></div>
+               <div class="semi-circle--mask"></div>
+             </div>
+           </div>
+         </section>
+
         </td>
       </tr>
     </tbody>

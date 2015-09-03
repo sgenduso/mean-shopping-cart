@@ -28,7 +28,7 @@ app.factory('cartService', function () {
         rating: 5,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0001/511/MI0001511716.jpg?partner=allrovi.com',
         bandMembers: 'Lindsey Buckingham, Mick Fleetwood, Christine McVie, John McVie, Stevie Nicks',
-        trendingScale: 244,
+        trendingScale: 95,
         styles: [
           'Pop',
           'Soft Rock'
@@ -44,7 +44,7 @@ app.factory('cartService', function () {
         rating: 5,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/020/MI0000020836.jpg?partner=allrovi.com',
         bandMembers: 'Billy Joel, Larry Carlton, Eric Weissberg, Billy Armstrong, Richard Bennett...',
-        trendingScale: 150,
+        trendingScale: 72,
         styles: [
           'Contemporary Pop',
           'Soft Rock',
@@ -61,7 +61,7 @@ app.factory('cartService', function () {
         rating: 3,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/699/MI0000699371.jpg?partner=allrovi.com',
         bandMembers: 'Agnetha Fältskog, Anni-Frid Lyngstad, Benny Andersson, Björn Ulvaeus',
-        trendingScale: 75,
+        trendingScale: 46,
         styles: [
           'Euro Pop',
           'Swedish Pop',
@@ -78,7 +78,7 @@ app.factory('cartService', function () {
         rating: 4,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0001/781/MI0001781614.jpg?partner=allrovi.com',
         bandMembers: 'James Hetfield, Kirk Hammett, Cliff Burton, Lars Ulrich',
-        trendingScale: 100,
+        trendingScale: 81,
         styles: [
           'Heavy Metal',
           'Thrash Metal',
@@ -127,7 +127,7 @@ app.factory('cartService', function () {
         rating: 5,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0003/201/MI0003201028.jpg?partner=allrovi.com',
         bandMembers: 'Freddie Mercury, Brian May, Roger Taylor, John Deacon',
-        trendingScale: 250,
+        trendingScale: 56,
         styles: [
           'Arena Rock',
           'Contemporary Pop/Rock',
@@ -145,7 +145,7 @@ app.factory('cartService', function () {
         rating: 5,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/677/MI0000677652.jpg?partner=allrovi.com',
         bandMembers: 'Michael Jackson, Ollie E. Brown, David Williams, Stefan Stefanovic...',
-        trendingScale: 102,
+        trendingScale: 70,
         styles: [
           'Pop',
           'Dance Pop',
@@ -162,7 +162,7 @@ app.factory('cartService', function () {
         rating: 3,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0003/606/MI0003606498.jpg?partner=allrovi.com',
         bandMembers: 'Paul McCartney, John Lennon, George Harrison, Ringo Starr',
-        trendingScale: 50,
+        trendingScale: 34,
         styles: [
           'British Pop',
           'Contemporary Pop/Rock'
@@ -178,7 +178,7 @@ app.factory('cartService', function () {
         rating: 3,
         imageUrl: 'http://cps-static.rovicorp.com/3/JPG_400/MI0000/755/MI0000755797.jpg?partner=allrovi.com',
         bandMembers: 'Philip Bailey, Maurice White, Verdine White, Ralph Johnson, Fred White...',
-        trendingScale: 63,
+        trendingScale: 22,
         styles: [
           'Funk',
           'Soul',
